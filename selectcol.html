@@ -1,0 +1,72 @@
+{% extends "layoutpr.html" %}
+{% block content %}
+{% with messages=get_flashed_messages() %}
+{% if messages %}
+<script type="text/javascript">
+  var m={{ messages|safe}};
+  for(var i=0;i<m.length;i++)
+  {
+    alert(m[i]);
+  }
+
+  </script>
+{% endif %}
+{% endwith %}
+<style>
+.dropbtn {
+  background-color: grey;
+  color: white;
+  padding: 65px;
+  font-size: 45px;
+  border: none;
+  text-align:center;
+  
+}
+
+
+.dropdown {
+  position: relative;
+  display:inline-block;
+
+  padding:50px 50px 50px 50px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 687px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 15px 15px;
+  text-decoration: none;
+  display: block;
+
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display:block;}
+
+.dropdown:hover .dropbtn {background-color: #A9A9A9;}
+</style>
+
+
+<center><div class="dropdown">
+  <button class="dropbtn">Want some info about labs?</button>
+  <div class="dropdown-content">
+    <a href="{{url_for('AEC')}}">AEC</a>
+    <a href="{{url_for('ACET')}}">ACET</a>
+    <a href="{{url_for('ACOE')}}">ACOE</a>
+  
+  </div>
+</div>
+</center>
+
+
+
+{% endblock %}

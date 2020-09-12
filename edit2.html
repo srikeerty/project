@@ -1,0 +1,53 @@
+{% extends "layoutpr.html" %}
+
+{% block content %}
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 bg-primary">
+				<h2 class="text-center">Update2</h2>
+				
+				<form class="form-group" action="{{url_for('update2')}}" method="POST">
+				<div class="form-group" >
+					<label for="labnum">Labnum:</label>
+					<input type="text" id="labno" value="{{data[0][0]}}"class="form-control"  placeholder="Enter Lab No" name="labno">
+				</div>
+				<div class="form-group">
+					<label for="labName">LabName:</label>
+					<input type="text"id="labname" value="{{data[0][1]}}" class="form-control"  placeholder="Enter Lab Name" name="labname">
+				</div>
+				<div class="form-group">
+					<label for="floorno">Floor</label>
+					<input type="text"id="floorno" value="{{data[0][2]}}" class="form-control"  name="floorno">
+				</div>
+				<div class="form-group">
+					<label for="incharge">incharge:</label>
+					<input type="text"id="incharge" value="{{data[0][3]}}" class="form-control"  name="incharge">
+				</div>
+				<div class="form-group">
+					<label for="technicians">Technicians</label>
+					<input type="text"id="technicians" value="{{data[0][4]}}" class="form-control"  name="technicians">
+				</div>
+				<div class="form-group">
+					<label for="softwares">Softwares:</label>
+					<input type="text"id="softwares" value="{{data[0][5]}}" class="form-control"  name="softwares">
+				</div>
+				<div class="form-group">
+					<label for="totalsystems">Total_systems</label>
+					<input type="text"id="totalsystems" value="{{data[0][6]}}" class="form-control"  name="totalsystems">
+				</div>
+				<div class="form-group">
+					<label for="underprob">Under_maintenance:</label>
+					<input type="text"id="underprob" value="{{data[0][7]}}" class="form-control"  name="underprob">
+				</div>
+				
+				<br>
+				<button type="submit" class="btn btn-success btn-block" name="submit">Submit</button>
+				<br><br><br>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}

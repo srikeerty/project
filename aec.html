@@ -1,0 +1,62 @@
+{% extends "layoutpr.html" %}
+
+{% block content %}
+<button onclick="goBack()">GOBACK</button>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+<h1> welcome!AEC lab information</h1>
+<table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+            
+                <th>labno</th>
+                <th>labname</th>
+                <th>floorno</th>
+                <th>Incharge</th>
+                <th>Technicians</th>
+                <th>Softwares</th>
+                <th>Totalsystem</th>
+				<th>Underprob</th>
+				
+            </tr>
+
+        </thead>
+        <tbody>
+        	{% for d in data %}
+            <tr>
+                <td>{{d[0]}}</td>
+                <td>{{d[1]}}</td>
+                <td>{{d[2]}}</td>
+                <td>{{d[3]}}</td>
+                <td>{{d[4]}}</td>
+                <td>{{d[5]}}</td>
+                <td>{{d[6]}}</td>
+                <td>{{d[7]}}</td>
+            
+                
+            
+
+
+            </tr>
+            {% endfor %}
+            </tbody>
+         </table>
+<script>
+	$(document).ready(function() {
+    $('#example').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+} );
+</script>
+
+
+{% endblock %}
+
+
+

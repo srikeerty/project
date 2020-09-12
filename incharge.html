@@ -1,0 +1,51 @@
+{% extends "layoutpr.html" %}
+
+{% block content %}
+{% with messages=get_flashed_messages() %}
+{% if messages %}
+<script type="text/javascript">
+	var m={{ messages|safe}};
+	for(var i=0;i<m.length;i++)
+	{
+		alert(m[i]);
+	}
+
+	</script>
+{% endif %}
+{% endwith %}
+
+
+<style>
+.container {
+  padding-top: 90px;
+
+  padding-left: 300px;
+
+  text-align: center;
+  text-decoration-color: black;
+}
+</style>
+<h1><b><center>Incharge login</center></b></h1>
+<div class="container">
+
+<form class="form-horizontal" action="{{url_for('incharge')}}"method="POST">
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="email">Username:</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" id="uname" name="uname" placeholder="Enter User Name">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="pwd">Password:</label>
+		<div class="col-sm-6">
+			<input type="Password" class="form-control" id="pwd" name="pwd" placeholder="Enter Password">
+		</div>
+	</div><div class="form-group">
+	<div class="col-sm-offset-2 col-sm-10">
+		<button type="submit" class="btn btn-default">submit</button>
+	</div>
+</div>
+</form>
+</div>
+
+{% endblock %}

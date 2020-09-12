@@ -1,0 +1,68 @@
+{% extends "layoutpr.html" %}
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3 bg-primary">
+			<h2 class="text-center">update1</h2>
+			<form class="form-group" action="{{url_for('update1')}}" method='POST'>
+				<div class="form-group">
+					<label for="labno">labno:</label>
+					<input type="text" id="labno" value="{{data[0][0]}}" class="form-control"
+					placeholder="enter labno" name="labno">
+				</div>
+				<div class="form-group">
+					<label for="labname">labname:</label>
+					<input type="text" id="labname" value="{{data[0][1]}}" class="form-control"
+					placeholder="enter lab name" name="labname">
+				</div>
+				<div class="form-group">
+					<label for="floorno">floorno:</label>
+					<input type="text" id="floorno" value="{{data[0][2]}}" class="form-control"
+					placeholder=" enter floorno" name="floorno">
+				</div>
+				<div class="form-group">
+					<label for="incharge">incharge</label>
+					<input type="text" id="incharge" value="{{data[0][3]}}" class="form-control"
+					placeholder="enter incharge" name="incharge">
+				</div>
+				<div class="form-group">
+					<label for="technicians">technicians</label>
+					<input type="text"  id="technicians" value="{{data[0][4]}}" class="form-control" placeholder ="enter technicians" name="technicians">
+				</div>
+				<div class="form-group">
+					<label for ="softwares">softwares</label>
+					<input type="text" id="softwares" value="{{data[0][5]}}" class="form-control"
+					placeholder="enter softwares" name="softwares">
+				</div>
+				<div class="form-group">
+					<label for ="totalsystems">totalsystems</label>
+					<input type="text" id="totalsystems" value="{{data[0][6]}}" class="form-control" placeholder="enter totalsystems" name="totalsystems">
+				</div>
+				<div class="form-group">
+					<label for ="underprob"> under maintenance</label>
+					<input type="text" id="underprob" value="{{data[0][7]}}" class="form-control"
+					placeholder="enter underprob" name="underprob">
+				</div>
+				<br>
+				<button type="submit" class="btn btn-block" name="id">submit</button>
+				<br>
+				<br>
+				<br>
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
